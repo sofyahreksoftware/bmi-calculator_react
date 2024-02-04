@@ -1,0 +1,41 @@
+.navigation {
+  margin-top: -10px;
+  padding: 0;
+  font-family: "Roboto Mono", monospace;
+  background-color: #dddedd;
+  border-bottom: 1px solid #ddd;
+}
+
+.navigation__list {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7px;
+  padding-top: 10px;
+}
+
+.navigation__element {
+  font-size: 18px;
+  color: #4d0049;
+  font-size: larger;
+  margin: 0 40px;
+  padding: 5px;
+}
+
+.navigation__element:hover {
+  transform: scale(1.05);
+  color: hsl(303, 100%, 25%);
+  transition: color 1s, transform 1.5s;
+}
+
+.navigation__link {
+  text-decoration: none;
+  color: #4d0049;
+}
+
+.navigation__link:hover {
+  transform: scale(1.05);
+  color: hsl(303, 100%, 30%);
+  transition: color 1s, transform 1.5s;
+}
