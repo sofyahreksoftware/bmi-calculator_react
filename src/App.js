@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useMathJaxFormula } from "./useMathJaxFormula";
 import Navigation from "./Navigatioin";
 import Form from "./Form";
 import { Header } from "./Header";
@@ -8,15 +8,7 @@ import { Article } from "./Article";
 import { BMIEndpoints } from "./bmiEndpoints";
 
 function App() {
-  const formulaHtml = {
-    __html: `\\[ \\text{formula} = \\frac{\\text{weight(kg)}}{\\text{height(m)}^2}\\]`,
-  };
-
-  useEffect(() => {
-    if (window.MathJax) {
-      window.MathJax.typesetPromise();
-    }
-  }, []);
+  const { BMIFormula } = useMathJaxFormula();
 
   return (
     <div className="App">
@@ -57,8 +49,8 @@ function App() {
                     within a healthy range for your height. It is calculated
                     using a specific formula:
                     <strong
-                      class="article__highlighted"
-                      dangerouslySetInnerHTML={formulaHtml}
+                      className="article__highlighted"
+                      dangerouslySetInnerHTML={BMIFormula}
                     ></strong>
                   </>
                 }
