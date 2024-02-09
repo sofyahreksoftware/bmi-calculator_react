@@ -1,40 +1,90 @@
-.navigation {
-  margin-top: -10px;
-  padding: 0;
+.nav {
   font-family: "Roboto Mono", monospace;
   background-color: #dddedd;
-  border-bottom: 1px solid #ddd;
+  border: 1px solid #ddd;
 }
 
-.navigation__list {
+@media (max-width: 767px) {
+  .nav {
+    top: 0;
+    transition: top 0.5s;
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav__hidden {
+    display: block;
+    position: fixed;
+    top: -100%;
+  }
+}
+
+.nav__menuButton {
+  display: flex;
+  margin: 30px 10px;
+  border: solid 1px #ddd;
+  border-radius: 5px;
+  flex-direction: column;
+  padding: 11px 15px;
+  position: fixed;
+  justify-content: space-between;
+  z-index: 1000;
+  top: 10px;
+  right: 10x;
+}
+
+@media (min-width: 767px) {
+  .nav__menuButton {
+    display: none;
+  }
+}
+
+.nav__menuBar {
+  display: block;
+  margin: 2px auto;
+  width: 20px;
+  border: solid 1.5px #2f2f2f;
+  border-radius: 5px;
+  background-color: #2f2f2f;
+}
+
+.nav__list {
   list-style-type: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 7px;
-  padding-top: 10px;
 }
 
-.navigation__element {
+@media (max-width: 767px) {
+  .nav__list {
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 20px auto;
+  }
+}
+
+.nav__item {
   font-size: 18px;
+  text-align: center;
   color: #4d0049;
   font-size: larger;
   margin: 0 40px;
   padding: 5px;
 }
 
-.navigation__element:hover {
+.nav__item:hover {
   transform: scale(1.05);
   color: hsl(303, 100%, 25%);
   transition: color 1s, transform 1.5s;
 }
 
-.navigation__link {
+.nav__link {
   text-decoration: none;
   color: #4d0049;
 }
 
-.navigation__link:hover {
+.nav__link:hover {
   transform: scale(1.05);
   color: hsl(303, 100%, 30%);
   transition: color 1s, transform 1.5s;

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useMathJaxFormula } from "./useMathJaxFormula";
 import Navigation from "./Navigatioin";
 import Form from "./Form";
@@ -8,15 +9,15 @@ import { Article } from "./Article";
 import { BMIEndpoints } from "./bmiEndpoints";
 
 function App() {
+  const [navHidden, setNavHidden] = useState(true);
+
   const { BMIFormula } = useMathJaxFormula();
 
   return (
     <div className="App">
-      <Navigation />
-
-      <Header headerName="Unlocking Health Insights: Understanding Your BMI" />
-
-      <Container>
+      <Navigation navHidden={navHidden} setNavHidden={setNavHidden} />
+      <Container navHidden={navHidden}>
+        <Header headerName="Unlocking Health Insights: Understanding Your BMI" />
         <Section
           sectionHeader="Understanding BMI: Your Body Mass Index"
           sectionBody={
@@ -90,7 +91,7 @@ function App() {
           sectionID="bmi-calculator"
           sectionHeader="Calculate your BMI"
           sectionBody={
-            <div>
+            <>
               <Article
                 articleParagraph={
                   <>
@@ -105,8 +106,8 @@ function App() {
                 }
               />
 
-              <Form></Form>
-            </div>
+              <Form />
+            </>
           }
         />
       </Container>

@@ -1,0 +1,6 @@
+@media (max-width: 767px) {
+  .container--dispaced {
+    margin-top: 5px;
+    transition: margin-top 0.5s;
+  }
+}

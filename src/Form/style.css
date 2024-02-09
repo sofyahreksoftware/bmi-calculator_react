@@ -66,6 +66,7 @@
 }
 
 .form__button {
+  font-family: "Roboto Mono", monospace;
   padding: 10px 30px;
   display: block;
   margin: 9px 0;
