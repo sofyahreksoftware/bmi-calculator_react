@@ -1,15 +1,20 @@
 import { useState } from "react";
 import { useMathJaxFormula } from "./useMathJaxFormula";
+import { BMIEndpoints } from "./bmiEndpoints";
 import Navigation from "./Navigatioin";
 import Form from "./Form";
 import { Header } from "./Header";
 import { Container } from "./Container";
 import { Section } from "./Section";
 import { Article } from "./Article";
-import { BMIEndpoints } from "./bmiEndpoints";
+import Result from "./Result";
 
 function App() {
   const [navHidden, setNavHidden] = useState(true);
+
+  const [height, setHeight] = useState("");
+  const [weight, setWeight] = useState("");
+  const [BMIResult, setBMIResult] = useState();
 
   const { BMIFormula } = useMathJaxFormula();
 
@@ -106,7 +111,15 @@ function App() {
                 }
               />
 
-              <Form />
+              <Form
+                height={height}
+                setHeight={setHeight}
+                weight={weight}
+                setWeight={setWeight}
+                BMIResult={BMIResult}
+                setBMIResult={setBMIResult}
+              />
+              <Result BMIResult={BMIResult} />
             </>
           }
         />
