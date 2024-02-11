@@ -63,6 +63,7 @@
   padding: 7px;
   border-color: #ddd;
   flex: 1 1 auto;
+  padding: 12px;
 }
 
 .form__button {
